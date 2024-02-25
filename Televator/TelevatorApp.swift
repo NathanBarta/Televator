@@ -11,7 +11,7 @@ import SwiftUI
 struct TelevatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

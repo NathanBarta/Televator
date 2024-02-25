@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8830ECA2B8A823E006B083F /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = D8830EC92B8A823E006B083F /* SwiftyPing */; };
 		D8DE10482B83E27E0072F57C /* TelevatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10472B83E27E0072F57C /* TelevatorApp.swift */; };
-		D8DE104A2B83E27E0072F57C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10492B83E27E0072F57C /* ContentView.swift */; };
+		D8DE104A2B83E27E0072F57C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10492B83E27E0072F57C /* MainView.swift */; };
 		D8DE104C2B83E2800072F57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DE104B2B83E2800072F57C /* Assets.xcassets */; };
 		D8DE104F2B83E2800072F57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DE104E2B83E2800072F57C /* Preview Assets.xcassets */; };
+		D8DE10562B83E3440072F57C /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10552B83E3440072F57C /* MainViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8DE10442B83E27E0072F57C /* Televator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Televator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DE10472B83E27E0072F57C /* TelevatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevatorApp.swift; sourceTree = "<group>"; };
-		D8DE10492B83E27E0072F57C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8DE10492B83E27E0072F57C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D8DE104B2B83E2800072F57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8DE104E2B83E2800072F57C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8DE10552B83E3440072F57C /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		D8DE10572B83E5DA0072F57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +30,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8830ECA2B8A823E006B083F /* SwiftyPing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D85417C92B88320B00909DE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8DE103B2B83E27E0072F57C = {
 			isa = PBXGroup;
 			children = (
 				D8DE10462B83E27E0072F57C /* Televator */,
 				D8DE10452B83E27E0072F57C /* Products */,
+				D85417C92B88320B00909DE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +64,12 @@
 		D8DE10462B83E27E0072F57C /* Televator */ = {
 			isa = PBXGroup;
 			children = (
+				D8DE10572B83E5DA0072F57C /* Info.plist */,
 				D8DE10472B83E27E0072F57C /* TelevatorApp.swift */,
-				D8DE10492B83E27E0072F57C /* ContentView.swift */,
+				D8DE10492B83E27E0072F57C /* MainView.swift */,
 				D8DE104B2B83E2800072F57C /* Assets.xcassets */,
 				D8DE104D2B83E2800072F57C /* Preview Content */,
+				D8DE10552B83E3440072F57C /* MainViewViewModel.swift */,
 			);
 			path = Televator;
 			sourceTree = "<group>";
@@ -83,6 +98,9 @@
 			dependencies = (
 			);
 			name = Televator;
+			packageProductDependencies = (
+				D8830EC92B8A823E006B083F /* SwiftyPing */,
+			);
 			productName = Televator;
 			productReference = D8DE10442B83E27E0072F57C /* Televator.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +117,7 @@
 				TargetAttributes = {
 					D8DE10432B83E27E0072F57C = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = D8DE103B2B83E27E0072F57C;
+			packageReferences = (
+				D8830EC82B8A823E006B083F /* XCRemoteSwiftPackageReference "SwiftyPing" */,
+			);
 			productRefGroup = D8DE10452B83E27E0072F57C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8DE104A2B83E27E0072F57C /* ContentView.swift in Sources */,
+				D8DE104A2B83E27E0072F57C /* MainView.swift in Sources */,
 				D8DE10482B83E27E0072F57C /* TelevatorApp.swift in Sources */,
+				D8DE10562B83E3440072F57C /* MainViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,17 +292,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Televator/Preview Content\"";
 				DEVELOPMENT_TEAM = T76PKZ8477;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Televator/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "gps location-services gyroscope";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,6 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathanbarta.Televator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,17 +328,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Televator/Preview Content\"";
 				DEVELOPMENT_TEAM = T76PKZ8477;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Televator/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We're trying to do a sidechannel attack, enable your location please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "gps location-services gyroscope";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D8830EC82B8A823E006B083F /* XCRemoteSwiftPackageReference "SwiftyPing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/samiyr/SwiftyPing.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8830EC92B8A823E006B083F /* SwiftyPing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8830EC82B8A823E006B083F /* XCRemoteSwiftPackageReference "SwiftyPing" */;
+			productName = SwiftyPing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8DE103C2B83E27E0072F57C /* Project object */;
 }
