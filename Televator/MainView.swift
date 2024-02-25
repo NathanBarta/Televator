@@ -33,7 +33,7 @@ struct MainView: View {
         RuleMark(
           x: .value("manualEnterElevatorTimesamp", manualEnterElevatorIndex),
           yStart: .value("manualEnterElevatorTimesamp", 0),
-          yEnd: .value("manualEnterElevatorTimestamp", 0.5)
+          yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
         )
         .foregroundStyle(.red)
       }
@@ -42,7 +42,7 @@ struct MainView: View {
         RuleMark(
           x: .value("manualEnterElevatorTimesamp", manualExitElevatorIndex),
           yStart: .value("manualEnterElevatorTimesamp", 0),
-          yEnd: .value("manualEnterElevatorTimestamp", 0.5)
+          yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
         )
         .foregroundStyle(.red)
       }
