@@ -20,8 +20,14 @@ public struct LatencyRecord: Identifiable {
   public let latency: TimeInterval
 }
 
+public struct RollingAvgRecord: Identifiable {
+  public let id: Int
+  public let latency: TimeInterval
+}
+
 final public class MainViewViewModel: NSObject, ObservableObject {
   @Published var latencyHistory: [LatencyRecord] = .init()
+  @Published var rollingAvgHistory: [RollingAvgRecord] = .init()
   @Published var rollingAvg: TimeInterval? = nil
   @Published var manualEnterElevatorIndex: Int?
   @Published var manualExitElevatorIndex: Int?
@@ -69,6 +75,7 @@ final public class MainViewViewModel: NSObject, ObservableObject {
     if sequenceNumber > WINDOW_WIDTH - 1 {
       rollingSum -= latencyHistory[Int(sequenceNumber) - WINDOW_WIDTH].latency
       rollingAvg = rollingSum / Double(WINDOW_WIDTH)
+      rollingAvgHistory.append(.init(id: Int(sequenceNumber), latency: rollingAvg!))
     }
   }
   
