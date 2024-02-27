@@ -13,7 +13,7 @@ import Combine
 import SwiftyPing
 
 let PING_INTERVAL: TimeInterval = 1.0
-let WINDOW_WIDTH: Int = 10
+let WINDOW_WIDTH: Int = 20
 
 public struct LatencyRecord: Identifiable {
   public let id: Int

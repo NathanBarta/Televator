@@ -11,22 +11,25 @@ import Charts
 struct MainView: View {
   @StateObject var viewModel = MainViewViewModel()
   @State var isTapped = false
-    
+  
   var body: some View {
     VStack(spacing: 16.0) {
       chart
-
+      
       Text(viewModel.errorString)
         .background(.red)
     }
     .padding()
   }
-
+  
   var chart: some View {
     Chart {
       if let rollingAvg = viewModel.rollingAvg {
         RuleMark(y: .value("Rolling Avg", rollingAvg))
           .foregroundStyle(.green)
+        
+        RuleMark(y: .value("Rolling Avg +50%", rollingAvg * 1.5))
+          .foregroundStyle(.orange)
       }
       
       if let manualEnterElevatorIndex = viewModel.manualEnterElevatorIndex {
