@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D8830ECA2B8A823E006B083F /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = D8830EC92B8A823E006B083F /* SwiftyPing */; };
+		D8971F332B8E731600CFDF6D /* BrakelPeakDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8971F322B8E731600CFDF6D /* BrakelPeakDetection.swift */; };
 		D8DE10482B83E27E0072F57C /* TelevatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10472B83E27E0072F57C /* TelevatorApp.swift */; };
 		D8DE104A2B83E27E0072F57C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE10492B83E27E0072F57C /* MainView.swift */; };
 		D8DE104C2B83E2800072F57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DE104B2B83E2800072F57C /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8971F322B8E731600CFDF6D /* BrakelPeakDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrakelPeakDetection.swift; sourceTree = "<group>"; };
 		D8DE10442B83E27E0072F57C /* Televator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Televator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DE10472B83E27E0072F57C /* TelevatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevatorApp.swift; sourceTree = "<group>"; };
 		D8DE10492B83E27E0072F57C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				D8DE10572B83E5DA0072F57C /* Info.plist */,
 				D8DE10472B83E27E0072F57C /* TelevatorApp.swift */,
 				D8DE10492B83E27E0072F57C /* MainView.swift */,
+				D8971F322B8E731600CFDF6D /* BrakelPeakDetection.swift */,
 				D8DE104B2B83E2800072F57C /* Assets.xcassets */,
 				D8DE104D2B83E2800072F57C /* Preview Content */,
 				D8DE10552B83E3440072F57C /* MainViewViewModel.swift */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8DE104A2B83E27E0072F57C /* MainView.swift in Sources */,
+				D8971F332B8E731600CFDF6D /* BrakelPeakDetection.swift in Sources */,
 				D8DE10482B83E27E0072F57C /* TelevatorApp.swift in Sources */,
 				D8DE10562B83E3440072F57C /* MainViewViewModel.swift in Sources */,
 			);

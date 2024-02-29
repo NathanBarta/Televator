@@ -23,63 +23,63 @@ struct MainView: View {
   }
   
   var chart: some View {
-    Chart {
-//      if let rollingAvg = viewModel.rollingAvg {
-//        RuleMark(y: .value("Rolling Avg", rollingAvg))
-//          .foregroundStyle(.green)
-//        
-//        RuleMark(y: .value("Rolling Avg +50%", rollingAvg * 1.5))
-//          .foregroundStyle(.orange)
-//      }
-      
-      if let manualEnterElevatorIndex = viewModel.manualEnterElevatorIndex {
-        RuleMark(
-          x: .value("manualEnterElevatorTimesamp", manualEnterElevatorIndex),
-          yStart: .value("manualEnterElevatorTimesamp", 0),
-          yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
-        )
-        .foregroundStyle(.red)
+    ZStack {
+      Chart {
+        if let manualEnterElevatorIndex = viewModel.manualEnterElevatorIndex {
+          RuleMark(
+            x: .value("manualEnterElevatorTimesamp", manualEnterElevatorIndex),
+            yStart: .value("manualEnterElevatorTimesamp", 0),
+            yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
+          )
+          .foregroundStyle(.red)
+        }
+        
+        if let manualExitElevatorIndex = viewModel.manualExitElevatorIndex {
+          RuleMark(
+            x: .value("manualEnterElevatorTimesamp", manualExitElevatorIndex),
+            yStart: .value("manualEnterElevatorTimesamp", 0),
+            yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
+          )
+          .foregroundStyle(.red)
+        }
+        
+        ForEach(viewModel.latencyHistory, id: \.id) { record in
+          LineMark(
+            x: .value("Sample", record.id),
+            y: .value("Latency", record.latency),
+            series: .value("", "Latency")
+          )
+        }
+        
+        ForEach(viewModel.signalHistory, id: \.id) { record in
+          LineMark(
+            x: .value("Sample", record.id),
+            y: .value("Latency", record.signal),
+            series: .value("", "SMA")
+          )
+          .foregroundStyle(.orange)
+        }
       }
+      .simultaneousGesture(
+        DragGesture(minimumDistance: 0)
+          .onChanged { _ in
+            if !self.isTapped {
+              self.isTapped = true
+              self.viewModel.addManualEnterElevator()
+            }
+          }
+          .onEnded { _ in
+            self.isTapped = false
+            self.viewModel.addManualExitElevator()
+          }
+      )
       
-      if let manualExitElevatorIndex = viewModel.manualExitElevatorIndex {
-        RuleMark(
-          x: .value("manualEnterElevatorTimesamp", manualExitElevatorIndex),
-          yStart: .value("manualEnterElevatorTimesamp", 0),
-          yEnd: .value("manualEnterElevatorTimestamp", viewModel.maxLatency)
-        )
-        .foregroundStyle(.red)
-      }
-      
-      ForEach(viewModel.latencyHistory, id: \.id) { record in
-        LineMark(
-          x: .value("Sample", record.id),
-          y: .value("Latency", record.latency),
-          series: .value("", "Latency")
-        )
-      }
-      
-      ForEach(viewModel.rollingAvgHistory, id: \.id) { record in
-        LineMark(
-          x: .value("Sample", record.id),
-          y: .value("Latency", record.latency),
-          series: .value("", "SMA")
-        )
-        .foregroundStyle(.orange)
+      if viewModel.latencyHistory.isEmpty {
+        ProgressView(value: viewModel.windowFillingProgress) {
+          Text("Analyzing base LTE signal...")
+        }
       }
     }
-    .simultaneousGesture(
-      DragGesture(minimumDistance: 0)
-        .onChanged { _ in
-          if !self.isTapped {
-            self.isTapped = true
-            self.viewModel.addManualEnterElevator()
-          }
-        }
-        .onEnded { _ in
-          self.isTapped = false
-          self.viewModel.addManualExitElevator()
-        }
-    )
   }
 }
 
